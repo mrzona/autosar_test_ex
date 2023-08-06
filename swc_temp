@@ -1,0 +1,34 @@
+#include <iostream>
+
+// This class represents a Software Component (SWC) that simulates a Temperature Sensor.
+class TemperatureSensor {
+private:
+    // Current temperature value.
+    double currentTemperature;
+
+public:
+    // Default constructor initializes the current temperature to 0.0.
+    TemperatureSensor() : currentTemperature(0.0) {}
+
+    // This method simulates the reading of temperature data.
+    // In a real sensor SWC, this would interact with the actual hardware.
+    double readTemperature() {
+        // For this simplified simulation, the temperature is a random number between 0 and 100.
+        currentTemperature = rand() % 100;
+        return currentTemperature;
+    }
+
+    // This method allows setting of the temperature data.
+    // In a real sensor SWC, this could involve complex algorithms or calibration procedures.
+    void writeTemperature(double temp) {
+        currentTemperature = temp;
+    }
+};
+
+int main() {
+    TemperatureSensor sensor;
+    // Output the current temperature to the console.
+    std::cout << "Current temperature is: " << sensor.readTemperature() << std::endl;
+    return 0;
+}
+// Note: This SWC is a simplified example. Real-world SWCs would be more complex, with error handling, network communications, and more.
