@@ -1,0 +1,32 @@
+#include <gtest/gtest.h>
+#include "TirePressureSensor.h"  // Assume that this header file contains the TirePressureSensor class definition.
+
+// This test fixture class sets up a TirePressureSensor instance for the tests.
+class TirePressureSensorTest : public ::testing::Test {
+protected:
+    TirePressureSensor sensor;
+};
+
+// This test checks that the readPressure method returns a value within the expected range.
+TEST_F(TirePressureSensorTest, ReadPressureTest) {
+    double pressure = sensor.readPressure();
+    // The simulated pressure should be between 20 and 40 PSI.
+    EXPECT_GE(pressure, 20);
+    EXPECT_LE(pressure, 40);
+}
+
+// This test verifies that the writePressure method correctly updates the pressure value.
+TEST_F(TirePressureSensorTest, WritePressureTest) {
+    // Use a known pressure value for the test.
+    double newPressure = 30.0;
+    sensor.writePressure(newPressure);
+    double pressure = sensor.readPressure();
+    // The read pressure should now be the same as the one we just set.
+    EXPECT_EQ(pressure, newPressure);
+}
+
+int main(int argc, char **argv) {
+    // Initialize Google Test and run the tests.
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
