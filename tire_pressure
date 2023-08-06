@@ -1,0 +1,33 @@
+#include <iostream>
+
+// This class represents a Software Component (SWC) that simulates a Tire Pressure Sensor.
+class TirePressureSensor {
+private:
+    // Current tire pressure value.
+    double currentPressure;
+
+public:
+    // Default constructor initializes the current pressure to 0.0.
+    TirePressureSensor() : currentPressure(0.0) {}
+
+    // This method simulates the reading of pressure data.
+    // In a real sensor SWC, this would interact with the actual hardware.
+    double readPressure() {
+        // For this simplified simulation, the pressure is a random number between 20 and 40.
+        currentPressure = rand() % 21 + 20; // rand() % 21 will generate numbers between 0 and 20, so we add 20 to simulate pressure in range of 20 to 40 PSI
+        return currentPressure;
+    }
+
+    // This method allows setting of the pressure data.
+    // In a real sensor SWC, this could involve complex algorithms or calibration procedures.
+    void writePressure(double pressure) {
+        currentPressure = pressure;
+    }
+};
+
+int main() {
+    TirePressureSensor sensor;
+    // Output the current tire pressure to the console.
+    std::cout << "Current tire pressure is: " << sensor.readPressure() << " PSI" << std::endl;
+    return 0;
+}
