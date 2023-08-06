@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+
+// Assuming we have a TirePressureSensor class defined elsewhere
+#include "TirePressureSensor.h"  
+
+// A simple cluster representation for 4 tires
+class SimpleCluster {
+private:
+    std::vector<TirePressureSensor> sensors;
+
+public:
+    SimpleCluster(int numSensors) : sensors(numSensors) {}
+
+    void displayTirePressures() {
+        for(int i = 0; i < sensors.size(); i++) {
+            std::cout << "Tire " << i+1 << " pressure: " << sensors[i].readPressure() << " PSI" << std::endl;
+        }
+    }
+};
+
+int main() {
+    SimpleCluster cluster(4);  // A cluster for a vehicle with 4 tires
+    cluster.displayTirePressures();
+    return 0;
+}
