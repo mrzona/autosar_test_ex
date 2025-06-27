@@ -12,7 +12,8 @@ private:
 public:
     SimpleCluster(int numSensors) : sensors(numSensors) {}
 
-    void displayTirePressures() {
+    void displayTirePressures() // [REQ-002: x040000000469F7300]
+    {
         for(int i = 0; i < sensors.size(); i++) {
             std::cout << "Tire " << i+1 << " pressure: " << sensors[i].readPressure() << " PSI" << std::endl;
         }
