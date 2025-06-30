@@ -14,6 +14,18 @@ TEST_F(TemperatureSensorTest, ReadTemperatureTest) {
     EXPECT_GE(temp, 0);
     EXPECT_LE(temp, 100);
 }
+    // [REQ-021: x040000000D3A4B2C1]
+    // [REQ-022: x0400000009E8F7D6]
+    // [REQ-023: x040000000AB12CD34]
+    // [REQ-024: x04000000077FA9999]
+    // [REQ-025: x0400000008BADBEEF]
+    // [REQ-026: x040000000CAFEBABE]
+    // [REQ-027: x040000000DEAD1234]
+    // [REQ-028: x04000000011113333]
+    // [REQ-029: x040000000EFFE0009]
+    // [REQ-030: x040000000DCBA5432]
+    // [REQ-031: x04000000012345678]
+    // [REQ-032: x040000000FEED0001]
 
 // This test verifies that the writeTemperature method correctly updates the temperature value.
 TEST_F(TemperatureSensorTest, WriteTemperatureTest) {
