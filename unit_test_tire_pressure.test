@@ -14,6 +14,20 @@ TEST_F(TirePressureSensorTest, ReadPressureTest) {
     EXPECT_GE(pressure, 20);
     EXPECT_LE(pressure, 40);
 }
+    // [REQ-001: x040000000123A1001]
+    // [REQ-002: x040000000469F7300]
+    // [REQ-003: x040000000892D4A32]
+    // [REQ-004: x0400000001FFE0023]
+    // [REQ-005: x040000000AAF00789]
+    // [REQ-006: x040000000C3D2AB45]
+    // [REQ-007: x040000000FF1133CC]
+    // [REQ-008: x040000000000DEADB]
+    // [REQ-009: x040000000321F0001]
+    // [REQ-010: x040000000BADF00D1]
+    // [REQ-011: x04000000077710001]
+    // [REQ-012: x040000000CAFE1234]
+    // [REQ-013: x04000000042E8001B]
+    // [REQ-014: x04000000088E7C9A2]
 
 // This test verifies that the writePressure method correctly updates the pressure value.
 TEST_F(TirePressureSensorTest, WritePressureTest) {
